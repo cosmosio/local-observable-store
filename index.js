@@ -29,15 +29,15 @@ function LocalStoreConstructor() {
      * The localStorage
      * @private
      */
-    _localStorage = localStorage || {},
+    _localStorage = localStorage;
 
     /**
      * Saves the current values in localStorage
      * @private
      */
-    setLocalStorage = function setLocalStorage() {
+    function persistLocalStorage() {
         _localStorage.setItem(_name, this.toJSON());
-    };
+    }
 
     /**
      * Override default localStorage with a new one
@@ -81,12 +81,12 @@ function LocalStoreConstructor() {
                 }
             }, this);
 
-            setLocalStorage.call(this);
+            persistLocalStorage.call(this);
 
             // Watch for modifications to update localStorage
-            this.watch("added", setLocalStorage, this);
-            this.watch("updated", setLocalStorage, this);
-            this.watch("deleted", setLocalStorage, this);
+            this.watch("added", persistLocalStorage, this);
+            this.watch("updated", persistLocalStorage, this);
+            this.watch("deleted", persistLocalStorage, this);
             return true;
         } else {
             return false;
