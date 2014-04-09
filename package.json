@@ -33,8 +33,9 @@
     "test": "jasmine-node test/"
   },
   "main": "index.js",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "observable-store": "0.0.3",
+    "simple-loop": "0.0.2"
   }
 }
