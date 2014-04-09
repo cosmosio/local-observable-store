@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>local observable store example</title>
+        <script src="local-observable-store.js"></script>
+    </head>
+    <body>
+
+        <script>
+            var LocalStore = require("local-observable-store");
+            var localStore = new LocalStore();
+
+            localStore.sync("persistedStore");
+
+            localStore.set("property", "value");
+
+            console.log(JSON.parse(localStorage.getItem("persistedStore")).property);
+        </script>
+    </body>
+</html>
