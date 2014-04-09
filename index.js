@@ -29,7 +29,7 @@ function LocalStoreConstructor() {
      * The localStorage
      * @private
      */
-    _localStorage = localStorage,
+    _localStorage = localStorage || {},
 
     /**
      * Saves the current values in localStorage
@@ -46,7 +46,7 @@ function LocalStoreConstructor() {
      * @private
      */
     this.setLocalStorage = function setLocalStorage(local$torage) {
-        if (local$torage && local$torage.setItem instanceof Function) {
+        if (local$torage && typeof local$torage.setItem == "function") {
             _localStorage = local$torage;
             return true;
         } else {

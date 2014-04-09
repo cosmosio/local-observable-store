@@ -33,7 +33,10 @@
     "test": "jasmine-node test/"
   },
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine-node": "~1.14.3",
+    "localStorage": "~1.0.2"
+  },
   "dependencies": {
     "observable-store": "0.0.3",
     "simple-loop": "0.0.2"

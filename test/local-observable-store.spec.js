@@ -5,28 +5,30 @@
 *
 * Copyright (c) 2014 Olivier Scherrer <pode.fr@gmail.com>
 */
+
+GLOBAL.localStorage = require("localStorage");
+
 var Store = require("observable-store"),
     LocalStore = require("../index");
 
 var localStorageMock = {
-    setItem: jasmine.createSpy(),
-    getItem: jasmine.createSpy().andReturn("{}")
+    setItem: jasmine.createSpy("setItem"),
+    getItem: jasmine.createSpy("getItem").andReturn("{}")
 };
 
 describe("LocalStoreTest", function () {
 
     it("should be a constructor function", function () {
-        expect(LocalStore).toBeInstanceOf(Function);
+        expect(typeof LocalStore).toBe("function");
     });
 
     it("should inherit from Store", function () {
-        expect(new LocalStore()).toBeInstanceOf(Store);
+        expect((new LocalStore()) instanceof Store).toBe(true);
     });
 
     it("should have a function to set/get localStorage", function () {
         var localStore = new LocalStore();
 
-        expect(localStore.setLocalStorage).toBeInstanceOf(Function);
         expect(localStore.setLocalStorage()).toBe(false);
         expect(localStore.setLocalStorage(localStorageMock)).toBe(true);
         expect(localStore.getLocalStorage()).toBe(localStorageMock);
@@ -50,7 +52,7 @@ describe("LocalStoreSync", function () {
     });
 
     it("should have a sync function", function () {
-        expect(localStore.sync).toBeInstanceOf(Function);
+        expect(typeof localStore.sync).toBe("function");
     });
 
     it("should sync with localStorage by default", function () {
