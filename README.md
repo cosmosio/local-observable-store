@@ -20,6 +20,7 @@ var LocalStore = require("local-observable-store"),
   localStore = new LocalStore();
 ```
 
+doc is coming...
 
 LICENSE
 =======
