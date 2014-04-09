@@ -1,7 +1,7 @@
 {
   "name": "local-observable-store",
   "description": "An observable data-store that persists in local storage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/cosmosio/local-observable-store",
   "licenses": [
     {
@@ -20,7 +20,8 @@
     "local",
     "localstorage",
     "storage",
-    "localstore"
+    "localstore",
+    "persist"
   ],
   "repository": {
     "type": "git",
