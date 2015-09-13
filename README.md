@@ -45,6 +45,13 @@ localStore.set("newProperty", "hello!");
 JSON.parse(localStorage.getItem("persistedStore")).newProperty; // "hello!";
 ```
 
+CHANGELOG
+=========
+
+### 0.0.3 - 13 SEP 2015
+
+* Update to latest observable-store
+* Update license field in package.json
 
 
 LICENSE
